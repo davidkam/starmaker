@@ -1,0 +1,54 @@
+body {
+  font-family: "Source Code Pro" ;
+  font-size: 16px;
+  margin: 10px;
+  text-align: center;
+}
+
+.canvas-container {
+  width: 100%;
+  height: 90%;
+}
+
+canvas {
+  width: 100%;
+  height: 100%%;
+}
+
+.container {
+  width: 90%;
+  margin: auto;
+  text-align: left;
+}
+
+.colleft {
+  float: left; width: 33%;
+}
+
+.colright {
+  float: right; width: 33%;
+}
+
+.colcenter{
+  display: inline-block; width: 33%;
+}
+
+.slider {
+  width: 200px;;
+}
+
+.ui-slider .ui-slider-handle {
+  background: #eee;
+  border: 1px solid #f88;
+  width: 10px;
+  height: 20px;
+}
+
+.ui-slider {
+  background: #ccc;
+  height: 10px;
+  border: 1px solid #aaa;
+  margin-left: 140px;
+  margin-top: -12px;
+}
+

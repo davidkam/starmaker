@@ -1,0 +1,30 @@
+<html>
+<head>
+<link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:400,500,600,700,900' rel='stylesheet' type='text/css'>
+<title>Make a star</title>
+<link rel="stylesheet" type="text/css" href="/styles/reset.css">
+<link rel="stylesheet" type="text/css" href="//code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="/styles/screen.css">
+
+<script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="//code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
+<script src="/scripts/global.js"></script>
+</head>
+<body>
+  <div class="header">
+    <div class="container">
+      <div class="colleft">
+        Number of vertices: <input type="text" size="2" class="vertices" value="3" name="vertices">
+      </div>
+      <div class="colcenter">
+        Vertex angle:<div class="slider" id="vangle"></div>
+      </div>
+      <div class="colright">
+        Cut-out angle:<div class="slider" id="cangle"></div>
+      </div>
+    </div>
+  </div>
+  <div class="canvas-container">
+    <canvas> </canvas>
+  </div>
+</body>
