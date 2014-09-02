@@ -7,13 +7,19 @@ $(document).ready(function() {
     value: 50,
     slide: function( event, ui ) {
       setValues();
+    },
+    change: function( event, ui ) {
+      setValues();
     }
   });
   $("#cangle").slider({
     min: 0,
-    max: 100,
-    value: 1,
+    max: 99,
+    value: 0,
     slide: function( event, ui ) {
+      setValues();
+    },
+    change: function( event, ui ) {
       setValues();
     }
   });
@@ -63,26 +69,24 @@ function drawStar(vertices, radius, angleV, angleC, originX, originY) {
   * draw blades
   */
   c = $("canvas")[0].getContext('2d');
+  c.beginPath();
+  c.translate(originX, originY);
+  c.rotate(-1 * PI/2);
+
   for(x = 0; x < vertices; x++) {
     //angleOffset = x * angleStep - (angleStep / (vertices - 1));
     angleOffset = x * angleStep;
     angleOffsetR = angleOffset * (PI / 180);
-    c.beginPath();
     // move to origin
-    c.moveTo(originX, originY);
+    c.moveTo(0, 0);
     // first point
-    angle = angleOffset - angleA
+    angle = angleOffset - angleA / 2;
     angleR = angle * (PI / 180);
-    newX = radiusCut * Math.cos(angleR);
-    newY = radiusCut * Math.sin(angleR);
-if(x == 0) {
-  console.log(angleOffset + ':' + angleR + ':' +radiusCut + ':'+ newX + ':' + newY);
-}
-    c.lineTo(newX + originX, newY + originY);
-    c.lineTo(radius * Math.cos(angleOffsetR) + originX, radius * Math.sin(angleOffsetR) + originY);
-    angle = angleOffset + angleA
+    c.lineTo(radiusCut * Math.cos(angleR), radiusCut * Math.sin(angleR));
+    c.lineTo(radius * Math.cos(angleOffsetR), radius * Math.sin(angleOffsetR));
+    angle = angleOffset + angleA / 2;
     angleR = angle * (PI / 180);
-    c.lineTo(radiusCut * Math.cos(angleR) + originX, radiusCut * Math.sin(angleR) + originY);
+    c.lineTo(radiusCut * Math.cos(angleR), radiusCut * Math.sin(angleR));
     c.fill();
   }
 }
