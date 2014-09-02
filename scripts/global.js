@@ -1,5 +1,3 @@
-var PI = Math.PI;
-
 $(document).ready(function() {
   height = $(".canvas-container").height();
   width = $(".canvas-container").width();
