@@ -39,5 +39,9 @@ function setValues() {
     vertices: $(".vertices")[0].value,
     vangleP: $("#vangle").slider("value"),
     cangleP: $("#cangle").slider("value"),
-  }).draw();
+    fillColor: 'red',
+  });
+  star.draw();
+  $(".vangle").val(star.vangle);
+  $(".cangle").val(star.cangle);
 }

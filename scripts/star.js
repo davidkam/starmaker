@@ -35,6 +35,8 @@ function Star(params) {
   var strokeColor = "black";
   var strokeWidth = 3;
   var c = null;
+  this.vangle = vangle;
+  this.cangle = cangle;
 
   var PICONV = Math.PI / 180;
   setParams(params);
@@ -191,8 +193,10 @@ function Star(params) {
         angle = angleOffset + angleA / 2;
         angleR = angle * PICONV;
         c.lineTo(radiusCut * Math.cos(angleR), radiusCut * Math.sin(angleR));
-        c.fillStyle = 'black';
+        c.fillStyle = fillColor;
         c.fill();
+        this.vangle = angleV;
+        this.cangle = angleC;
       }
     }
   }
